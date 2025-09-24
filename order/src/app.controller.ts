@@ -7,7 +7,7 @@ import { OrdersService } from './app.service';
 export class AppController {
   constructor(private readonly appService: OrdersService) {}
 
-  @MessagePattern({ cmd: 'createOrder' })
+  @MessagePattern('orders:list')
   getOrders() {
     return this.appService.createOrder();
   }

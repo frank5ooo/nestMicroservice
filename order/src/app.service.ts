@@ -8,24 +8,12 @@ import { createClient } from 'redis';
 
 @Injectable()
 export class OrdersService {
-  private publisher;
-
-  constructor() {
-    this.publisher = createClient({ url: 'redis://localhost:6379' });
-    this.publisher.connect()
-      .then(() => console.log('Order service: conectado a Redis'))
-      .catch(err => console.error('Redis publisher error', err));
-  }
 
   async createOrder() {
     // lógica para guardar el pedido
-    console.log("im in");
-    const order = { id: Date.now()};
+    const order = "anda bien";
 
-    // Publicamos el evento
-    await this.publisher.publish('orders:list', JSON.stringify(order));
-    
-    console.log('Order publicado:', order);
+    // console.log('Order publicado:', order);
 
     return order;
   }

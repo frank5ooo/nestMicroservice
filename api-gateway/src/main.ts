@@ -16,7 +16,9 @@ async function bootstrap() {
   });
 
   await app.startAllMicroservices();
+  
   await app.listen(3000);
   console.log('API Gateway escuchando en http://localhost:3000');
 }
-bootstrap();
+bootstrap()
+  .catch(console.error);
