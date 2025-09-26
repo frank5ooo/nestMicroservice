@@ -1,6 +1,5 @@
 /* eslint-disable prettier/prettier */
 
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { Controller, Get, Inject } from '@nestjs/common';
 import { ClientProxy} from '@nestjs/microservices';
 
@@ -12,6 +11,6 @@ export class AppController {
 
   @Get('orders')
    getOrders() {
-    return this.orderClient.send("orders:list", {}); // manda un patrón
+    return this.orderClient.send("orders:list", {});
   }
 }
