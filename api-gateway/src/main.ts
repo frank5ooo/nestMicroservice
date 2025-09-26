@@ -16,9 +16,9 @@ async function bootstrap() {
   });
 
   await app.startAllMicroservices();
-  
-  await app.listen(3000);
-  console.log('API Gateway escuchando en http://localhost:3000');
+  const port = 3456;
+  await app.listen(port);
+  console.log(`API Gateway escuchando en http://localhost:${port}`);
 }
 bootstrap()
   .catch(console.error);
